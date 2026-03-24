@@ -89,3 +89,7 @@ The .crx file can be shared and installed on any Chrome/Brave/Edge browser.
 - [defuddle](https://github.com/kepano/defuddle) for content extraction and Markdown conversion
 - [dayjs](https://github.com/iamkun/dayjs) for date parsing and formatting
 - [lz-string](https://github.com/pieroxy/lz-string) to compress templates to reduce storage space
+
+## Forked from
+
+This project is a fork of [Obsidian Web Clipper](https://github.com/obsidianmd/obsidian-clipper)
