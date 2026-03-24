@@ -1,0 +1,130 @@
+{
+	"manifest_version": 3,
+	"default_locale": "en",
+	"name": "Copy as Markdown",
+	"homepage_url": "https://github.com/",
+	"version": "1.0.0",
+	"description": "Copy any web page to your clipboard to give your LLMs full context. Forked from Obsidian Web Clipper extension.",
+	"permissions": [
+		"activeTab",
+		"clipboardWrite",
+		"contextMenus",
+		"storage",
+		"scripting",
+		"webRequest",
+		"webRequestBlocking"
+	],
+	"host_permissions": [
+		"<all_urls>",
+		"http://*/*",
+		"https://*/*"
+	],
+	"action": {
+		"default_popup": "popup.html",
+		"default_icon": {
+			"16": "icons/icon16.png",
+			"48": "icons/icon48.png",
+			"128": "icons/icon128.png"
+		}
+	},
+	"options_ui": {
+		"page": "settings.html",
+		"open_in_tab": true
+	},
+	"icons": {
+		"16": "icons/copy.png",
+		"48": "icons/copy.svg",
+		"128": "icons/copy.svg"
+	},
+	"background": {
+		"scripts": [
+			"background.js"
+		]
+	},
+	"content_scripts": [
+		{
+			"matches": [
+				"http://*/*",
+				"https://*/*"
+			],
+			"js": [
+				"browser-polyfill.min.js",
+				"content.js"
+			],
+			"css": [
+				"highlighter.css"
+			]
+		}
+	],
+	"web_accessible_resources": [
+		{
+			"resources": [
+				"reader.css",
+				"reader-script.js",
+				"browser-polyfill.min.js",
+				"style.css",
+				"side-panel.html",
+				"flatten-shadow-dom.js"
+			],
+			"extension_ids": [
+				"*"
+			],
+			"matches": [
+				"*://*/*"
+			]
+		}
+	],
+	"content_security_policy": {
+		"extension_pages": "script-src 'self'; object-src 'self'"
+	},
+	"commands": {
+		"_execute_action": {
+			"suggested_key": {
+				"default": "Alt+Shift+O",
+				"mac": "Alt+Shift+O"
+			},
+			"description": "__MSG_commandOpenClipper__"
+		},
+		"toggle_highlighter": {
+			"suggested_key": {
+				"default": "Alt+Shift+H",
+				"mac": "Alt+Shift+H"
+			},
+			"description": "__MSG_commandToggleHighlighter__"
+		},
+		"toggle_reader": {
+			"suggested_key": {
+				"default": "Alt+Shift+R",
+				"mac": "Alt+Shift+R"
+			},
+			"description": "__MSG_commandToggleReader__"
+		},
+		"copy_to_clipboard": {
+			"suggested_key": {
+				"default": "Ctrl+Shift+C",
+				"mac": "Command+Shift+C"
+			},
+			"description": "__MSG_commandCopyToClipboard__"
+		}
+	},
+	"copy_to_clipboard": {
+		"suggested_key": {
+			"default": "Ctrl+Shift+O",
+			"id": "clipper@obsidian.md",
+			"strict_min_version": "113.0",
+			"data_collection_permissions": {
+				"required": [
+					"none"
+				]
+			}
+		},
+		"gecko_android": {
+			"strict_min_version": "113.0",
+			"data_collection_permissions": {
+				"required": [
+					"none"
+				]
+			}
+		}
+	}
+}
