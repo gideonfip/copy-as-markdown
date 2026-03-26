@@ -127,7 +127,7 @@
 		"message": "Toggle reading view"
 	},
 	"commandCopyToClipboard": {
-		"message": "Copy to clipboard"
+		"message": "Copy to markdown"
 	},
 	"confirmDeleteTemplate": {
 		"message": "Are you sure you want to delete the template \"$1\"?"
@@ -142,7 +142,7 @@
 		"message": "Copy as JSON"
 	},
 	"copyToClipboard": {
-		"message": "Copy to clipboard"
+		"message": "Copy as markdown"
 	},
 	"createNewNote": {
 		"message": "Create new note"
